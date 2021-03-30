@@ -1,0 +1,34 @@
+﻿<Window x:Class="Binding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="DataTable" Height="450" Width="700">
+    
+    <Grid Background="Lavender" Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DataGrid Name="dgStudents" AutoGenerateColumns="False" Grid.Row="0" Grid.ColumnSpan="2" FontSize="15" HorizontalScrollBarVisibility="Disabled">
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}" />
+                <DataGridTextColumn Header="First name" Binding="{Binding First_name}" />
+                <DataGridTextColumn Header="Last name" Binding="{Binding Last_name}" />
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" />
+                <DataGridTextColumn Header="IP Address" Binding="{Binding IP_address}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Grid.Row="2" Grid.Column="0" Margin="40 10" Click="Prev_Button_Click">Prev</Button>
+        <Button Grid.Row="2" Grid.Column="1" Margin="40 10" Click="Next_Button_Click">Next</Button>
+    </Grid>
+    
+</Window>
